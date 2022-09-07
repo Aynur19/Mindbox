@@ -8,7 +8,7 @@ namespace MathLibraryTests
     public class MathsTests
     {
         [Theory]
-        [ClassData(typeof(AreaTestData))]
+        [MemberData(nameof(AreaTestData.GetCircleAreaTestData), MemberType = typeof(AreaTestData))]
         public void CircleAreaTests(double input, double expected)
         {
             IAreaCalculatable figure = new Circle(input);

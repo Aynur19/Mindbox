@@ -21,7 +21,7 @@ namespace MathLibrary.Figures
             {
                 if(value < 0)
                 {
-                    radius = 0;
+                    radius = double.NaN;
                 }
                 else
                 {
@@ -32,6 +32,11 @@ namespace MathLibrary.Figures
 
         public double GetArea()
         {
+            if (double.IsNaN(Radius))
+            {
+                return double.NaN;
+            }
+
             return Math.PI * Radius * Radius;   
         }
     }

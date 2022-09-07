@@ -4,7 +4,8 @@
     {
         public static double GetFigureArea(params double[] x)
         {
-            return -1;
+            return double.NaN;
         }
+
     }
 }
