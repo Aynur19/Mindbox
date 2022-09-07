@@ -2,7 +2,7 @@
 {
     public class Maths
     {
-        public double GetFigureArea(double x)
+        public static double GetFigureArea(params double[] x)
         {
             return -1;
         }
