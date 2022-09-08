@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MathLibrary.Figures
+﻿namespace MathLibrary.Figures
 {
+    /// <summary>
+    /// Окружность.
+    /// </summary>
     public class Circle : IAreaCalculatable
     {
         public Circle(double r)
@@ -19,25 +16,25 @@ namespace MathLibrary.Figures
             get { return radius; }
             set
             {
-                if(value < 0)
-                {
-                    radius = double.NaN;
-                }
-                else
-                {
-                    radius = value;
-                }
+                radius = Maths.ValidPositive(value);
+                PropertiesCalculation();
             }
         }
 
-        public double GetArea()
+        public double Area { get; private set; }
+        public bool IsCircle { get; private set; }
+
+
+        private void PropertiesCalculation()
         {
             if (double.IsNaN(Radius))
             {
-                return double.NaN;
+                IsCircle = false;
+                Area = double.NaN;
             }
 
-            return Math.PI * Radius * Radius;   
+            IsCircle = true;
+            Area = Math.PI * Radius * Radius;   
         }
     }
 }
