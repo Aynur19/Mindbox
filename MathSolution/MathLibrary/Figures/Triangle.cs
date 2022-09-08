@@ -164,5 +164,19 @@
 
             UpdateProperties();
         }
+
+
+        public override string ToString()
+        {
+            return $"{nameof(Triangle)}:\n" +
+                $"  {nameof(SideX)}: {SideX}\n" +
+                $"  {nameof(SideY)}: {SideY}\n" +
+                $"  {nameof(SideZ)}: {SideZ}\n" +
+                $"  {nameof(Area)}: {Area}\n" +
+                $"  {nameof(IsTriangle)}: {IsTriangle}\n" +
+                $"  {nameof(IsEquilateral)}: {IsEquilateral}\n" +
+                $"  {nameof(IsRight)}: {IsRight}\n" +
+                $"  {nameof(IsIsosceles)}: {IsIsosceles}\n";
+        }
     }
 }

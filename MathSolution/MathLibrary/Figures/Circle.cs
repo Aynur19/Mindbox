@@ -47,5 +47,13 @@
                 IsCircle = true;
             }
         }
+
+        public override string ToString()
+        {
+            return $"{nameof(Circle)}:\n" +
+                $"  {nameof(Radius)}: {Radius}\n" +
+                $"  {nameof(Area)}: {Area}\n" +
+                $"  {nameof(IsCircle)}: {IsCircle}\n";
+        }
     }
 }
