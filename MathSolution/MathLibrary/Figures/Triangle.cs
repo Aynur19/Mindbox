@@ -1,5 +1,8 @@
 ﻿namespace MathLibrary.Figures
 {
+    /// <summary>
+    /// Треугольник.
+    /// </summary>
     public class Triangle : IAreaCalculatable
     {
         public Triangle(double x)
@@ -150,6 +153,9 @@
             IsIsosceles = false;
         }
 
+        /// <summary>
+        /// Обновление сторон.
+        /// </summary>
         public void SetSides(double x, double y, double z)
         {
             SideX = x;

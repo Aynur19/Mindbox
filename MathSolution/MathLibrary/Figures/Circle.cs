@@ -17,24 +17,35 @@
             set
             {
                 radius = Maths.ValidPositive(value);
-                PropertiesCalculation();
+                UpdateProperties();
             }
         }
 
         public double Area { get; private set; }
         public bool IsCircle { get; private set; }
 
-
-        private void PropertiesCalculation()
+        /// <summary>
+        /// Обновление свойств.
+        /// </summary>
+        private void UpdateProperties()
         {
             if (double.IsNaN(Radius))
             {
                 IsCircle = false;
                 Area = double.NaN;
+                return;
             }
 
-            IsCircle = true;
-            Area = Math.PI * Radius * Radius;   
+            Area = Math.PI * Radius * Radius;
+
+            if (Area <= 0)
+            {
+                IsCircle = false;
+            }
+            else
+            {
+                IsCircle = true;
+            }
         }
     }
 }
